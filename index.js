@@ -34,7 +34,8 @@ const app = new App({
         const emojis = {
             available: "✅",
             offline: "🫥",
-            "cycle finished": "🧺➡️"
+            "cycle finished": "🧺➡️",
+            "in use": "🚫"
         }
         for (const room of rooms) {
             blocks.push({
@@ -49,7 +50,7 @@ const app = new App({
             for (const machine of laundry) {
                 subBlocks.push({
                     "type": "mrkdwn",
-                    "text": `${emojis[machine.Status] || "❓"} Machine #${machine.Node} (${machine.Size}) is currently *${machine.Status}*`
+                    "text": `${emojis[machine.Status] || "❓"} Machine #${machine.Node} (${machine.Size}) is currently *${machine.Status}* ${machine["5"] ? `(${machine["5"].split("\n")[0]})` : ""}`
                 });
             }
             blocks.push({
@@ -63,9 +64,12 @@ const app = new App({
                 "type": "mrkdwn",
                 "text": `Legend:
 ✅ Available: The machine is clear and read to be used.
-🫥 Offline: The machine is offline and cannot be connected to the internet.
+🚫 In Use: The machine is in use.
 🧺➡️ Cycle Finished: The machine is ready, but clothes need to be taken out.
-💡 Protip: Clothes trapped? Unplug the machine, wait 5 minutes, and open.`
+🫥 Offline: The machine is offline and cannot be connected to the internet.
+
+💡 Protip: Clothes trapped? Unplug the machine, wait 5 minutes, and open.
+🛠️ Use <https://automaticlaundry.com/report-service/|this form> to report a broken machine.`
             }
         })
         respond({

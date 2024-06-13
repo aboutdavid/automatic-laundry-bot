@@ -12,8 +12,10 @@ const app = new App({
 
 
 (async () => {
-    const browser = await puppeteer.launch();
-
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox']
+    });
     async function getLaundry(room) {
         const page = await browser.newPage();
         await page.goto(`https://wa.sqinsights.com/${process.env.LAUNDRY_CAMPUS}?room=${room}`);

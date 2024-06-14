@@ -4,6 +4,7 @@
     "dotenv": "^16.4.5",
     "html-table-to-json": "^1.0.0",
     "puppeteer": "^22.11.0",
-    "puppeteer-core": "^22.11.0"
+    "puppeteer-core": "^22.11.0",
+    "redis": "4.6.13"
   }
 }

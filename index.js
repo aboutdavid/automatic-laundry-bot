@@ -68,8 +68,8 @@ const app = new App({
 🧺➡️ Cycle Finished: The machine is ready, but clothes need to be taken out.
 🫥 Offline: The machine is offline and cannot be connected to the internet.
 
-💡 Protip: Clothes trapped? Unplug the machine, wait 5 minutes, and open.
-🛠️ Use <https://automaticlaundry.com/report-service/|this form> to report a broken machine.`
+📟 Learn how to <https://hackclub.slack.com/archives/C077W4A8NUS/p1718329475543409|enable notifications here using ntfy>.
+🛠️ Call +1 (617) 969-4340 to report broken machines.`
             }
         })
         respond({
